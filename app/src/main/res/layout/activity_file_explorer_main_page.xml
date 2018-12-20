@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F2F3">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.8"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/cloud_storage_lambda_cloud_storage_title"
+                android:textSize="22sp" />
+
+            <ImageButton
+                android:id="@+id/ib_cloud_storage_display_option"
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:layout_height="match_parent"
+                android:padding="15dp"
+                android:src="@drawable/ic_cloud_storage_display_option"
+                android:layout_gravity="center_vertical|end"
+                android:background="#00000000"
+                android:scaleType="fitEnd"
+                />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimary"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/file_explorer_main_grid_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.9" />
+
+        <LinearLayout
+            android:id="@+id/ll_tool_bar_container"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/ll_tool_bar_add_volume"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageButton
+                    android:id="@+id/btn_tool_bar_add_volume"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/ic_add_new_volume" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_edit_tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageButton
+                    android:id="@+id/tool_bar_rename_volume"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/ic_cloud_rename" />
+
+                <ImageButton
+                    android:id="@+id/tool_bar_delete_volume"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/ic_delete" />
+
+                <ImageButton
+                    android:id="@+id/tool_bar_exit"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1"
+                    android:src="@drawable/ic_exit_icon" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <com.flir.cloud.ui.Views.LambdaCustomProgressBar
+        android:id="@+id/lambda_custom_progress_bar_volume_main_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+</FrameLayout>

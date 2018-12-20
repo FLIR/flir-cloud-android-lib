@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/flir_color_primary"
+    android:orientation="vertical"
+    tools:context=".ui.Authentication.Login.LoginActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/flir_logo_white_color" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/account_page_welcome"
+            android:fontFamily="@font/industry_bold"
+            android:textColor="@color/select_account_text_color" />
+
+        <Button
+            android:id="@+id/account_chooser_dialog"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/industry_bold"
+            android:background="@drawable/thermal_background_api_selector"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:text="@string/account_select_account" />
+
+    </LinearLayout>
+
+    <com.flir.cloud.ui.Views.LambdaCustomProgressBar
+        android:id="@+id/lambda_custom_progress_bar_account"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+    </com.flir.cloud.ui.Views.LambdaCustomProgressBar>
+    
+</FrameLayout>

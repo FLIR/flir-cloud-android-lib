@@ -8,4 +8,46 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+    <item name="android:textSize">25sp</item>
+    <item name="android:textColor">@color/main_page_tool_bar_title_mask_color</item>
+
+</style>
+
+    <style name="TextLabel" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/login_page_edit_text_hint_text_color</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/industry_bold</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/login_page_edit_text_floating_text_color</item>
+        <item name="colorControlNormal">@color/login_page_edit_text_floating_text_color</item>
+        <item name="colorControlActivated">@color/login_page_edit_text_floating_text_color</item>
+    </style>
+
+    <style name="MyMaterialTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+    <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/file_explorer_file_details_cancel_button_text_color</item>
+        <item name="android:textColorPrimary">@color/file_explorer_file_details_text_color</item>
+        <item name="android:background">@color/file_explorer_file_details_background_color</item>
+    </style>
+
+
 </resources>

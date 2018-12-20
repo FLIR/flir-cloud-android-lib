@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/camera_activity_item_view"
+    android:layout_width="match_parent"
+    android:animateLayoutChanges="true"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_video_page_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/flir_color_primary"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_close_page"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.125"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/carousel_flir_icon_size"
+                android:layout_height="@dimen/carousel_flir_icon_size"
+                android:layout_gravity="top|center"
+                android:src="@drawable/flir_logo_white_color" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/ll_export_video"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.07"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_select_channel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:padding="10dp"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_top_channel_selector"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:fontFamily="@font/industry_bold"
+                    android:background="@drawable/thermal_background_api_selector"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@string/device_select_channel" />
+
+
+                <TextView
+                    android:id="@+id/tv_top_show_device_state"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/industry_bold"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/colorPrimary"
+                    android:background="@drawable/thermal_background_api_selector"
+                    android:text="@string/device_show_device_state" />
+
+
+            </LinearLayout>
+
+            <com.flir.cloud.ui.Access.AccessActivities.AccessCarouselFiles.AccessCameraItemView.CameraTopVideoView.TimeLineSelectorLinearLayout
+                android:id="@+id/ll_video_top"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <com.flir.cloud.ui.Access.AccessActivities.AccessCarouselFiles.AccessCameraItemView.CameraVideoView.CameraVideoFrameLayoutCustomView
+            android:id="@+id/camera_video_frame_layout_custom_view_xml"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_video_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/access_view_tlv_view"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:visibility="gone">
+
+                <com.flir.cloud.ui.Views.TimeLineCustomView.SelectorCustomView.TLView
+                    android:id="@+id/access_tlv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/access_view_carousel_item_buttons_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_video_view_timeline_picker"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.25"
+                   android:background="@drawable/camera_view_bottom_bar_background_selector"
+                    android:src="@drawable/ic_timeline" />
+
+                <ImageButton
+                    android:id="@+id/btn_btn_video_view_settings"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.25"
+                   android:background="@drawable/camera_view_bottom_bar_background_selector"
+                    android:src="@drawable/ic_settings" />
+
+                <ImageButton
+                    android:id="@+id/btn_btn_video_view_full_screen"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.25"
+                   android:background="@drawable/camera_view_bottom_bar_background_selector"
+                    android:src="@drawable/ic_full_screen_symbol" />
+
+                <ImageButton
+                    android:id="@+id/btn_btn_video_view_share_device"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.25"
+                   android:background="@drawable/camera_view_bottom_bar_background_selector"
+                    android:src="@drawable/ic_share_symbol" />
+
+                <ImageButton
+                    android:id="@+id/btn_btn_video_view_delete"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.25"
+                   android:background="@drawable/camera_view_bottom_bar_background_selector"
+                    android:src="@drawable/ic_delete_icon" />
+
+                <ImageButton
+                    android:id="@+id/btn_btn_video_controls_on_off"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/camera_view_bottom_bar_background_selector"
+                    android:src="@drawable/ic_video_controls_off" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/time_line_buttons_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_video_view_timeline_picker_close"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.25"
+                   android:background="@drawable/camera_view_bottom_bar_background_selector"
+                    android:src="@drawable/ic_timeline" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"/>
+
+                <ImageButton
+                    android:id="@+id/btn_video_view_timeline_picker_speed_minus"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/camera_view_bottom_bar_background_selector"
+                    android:src="@drawable/ic_playback_speed_turtle_icon" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"/>
+
+                <ImageButton
+                    android:id="@+id/btn_video_view_timeline_picker_speed_plus"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/camera_view_bottom_bar_background_selector"
+                    android:src="@drawable/ic_playback_speed_rabbit_icon" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"/>
+
+                <ImageButton
+                    android:id="@+id/btn_video_view_timeline_picker_controller_on_off"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/camera_view_bottom_bar_background_selector"
+                    android:src="@drawable/ic_video_controls_on" />
+
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <com.flir.cloud.ui.Views.LambdaCustomProgressBar
+        android:id="@+id/lambda_custom_progress_bar_device_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+    </com.flir.cloud.ui.Views.LambdaCustomProgressBar>
+</FrameLayout>

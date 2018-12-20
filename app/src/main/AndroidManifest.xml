@@ -1,21 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.flir.androidLib">
+    package="com.flir.cloud">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
+        android:name="com.flir.cloud.MainApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/app_icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/MyMaterialTheme">
+        <activity android:name="com.flir.cloud.ui.Authentication.SignUp.SignUpActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.flir.cloud.ui.Authentication.ForgotPassword.ForgotPasswordActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.flir.cloud.ui.Account.AccountPageActivity" android:windowSoftInputMode="adjustPan" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.flir.cloud.ui.Access.AccessDevicesCarouselActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.flir.cloud.ui.Access.AccessActivities.AccessCarouselFiles.AccessCameraItemView.CameraItemActivity" android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <activity android:name="com.flir.cloud.ui.Access.AccessActivities.AccessAddDevice" android:windowSoftInputMode="adjustPan" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.flir.cloud.ui.Access.AccessActivities.AccessCarouselFiles.UpdateDeviceActivity.UpdateDeviceActivity" android:windowSoftInputMode="adjustPan" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.flir.cloud.ui.Authentication.UserProfile.UserProfileMainPagePage" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.flir.cloud.ui.Authentication.ChangePasswordPage.ChangePasswordActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.flir.cloud.ui.Authentication.UpdateUser.UpdateUserActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.flir.cloud.ui.fileExplorer.VolumePageClasses.VolumeMainPageActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.flir.cloud.ui.fileExplorer.FoldersClasses.FolderActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.flir.cloud.ui.Authentication.Login.LoginActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <service
+            android:name="com.flir.cloud.Services.EventMqttIntentService"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.flir.cloud.Services.EventMqttIntentService" />
+            </intent-filter>
+        </service>
+
+        <service android:name="org.eclipse.paho.android.service.MqttService"/>
+
+        <provider
+            android:name="com.flir.cloud.ui.Access.AccessActivities.AccessCarouselFiles.AccessCameraItemView.CameraTopVideoView.ExportVideoNotificationFiles.GenericFileProvider"
+            android:authorities="${applicationId}.com.flir.cloud.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <receiver android:name="com.flir.cloud.ui.Access.AccessActivities.AccessCarouselFiles.AccessCameraItemView.CameraTopVideoView.ExportVideoNotificationFiles.NotificationBroadcastReceiver">
+            <intent-filter>
+                <action android:name="notification_cancelled"/>
+            </intent-filter>
+        </receiver>
+
     </application>
+
 
 </manifest>

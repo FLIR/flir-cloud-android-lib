@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/flir_color_primary"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="16dp">
+
+        <TextView
+            android:id="@+id/tv_update_device_device_name"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/flir_color_primary"
+            android:background="@color/login_page_text_color" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/acl_input_layout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:theme="@style/TextLabel">
+
+            <EditText
+                android:id="@+id/acl_update_input_name"
+                android:layout_width="220dp"
+                android:layout_height="30dp"
+                android:background="@color/sign_up_page_edit_text_background"
+                android:ems="10"
+                android:hint="@string/acl_name"
+                android:inputType="textPersonName"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
+
+        <include
+            layout="@layout/add_data_container_view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <Button
+            android:id="@+id/access_button_update_device"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/signup_page_signup_button_margin_bottom"
+            android:layout_marginTop="10dp"
+            android:background="@color/forgot_password_page_button_background"
+            android:text="@string/acl_update_device" />
+
+    </LinearLayout>
+
+    <com.flir.cloud.ui.Views.LambdaCustomProgressBar
+        android:id="@+id/lambda_custom_progress_bar_acl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</FrameLayout>

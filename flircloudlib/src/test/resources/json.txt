@@ -1,0 +1,14 @@
+[
+    {
+        "id": "moti_gals_table",
+        "resource_type": "Device",
+        "name": "moti_gals_table",
+        "account": "f00daada-9de0-48cc-84f8-db35b4a8cf63",
+        "accountType": "flir",
+        "tags": {
+            "group": [
+                "office"
+            ]
+        }
+    }
+]

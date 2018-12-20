@@ -1,1 +1,2 @@
-include ':app', ':flir_cloud_lib'
+include 'app'
+include 'FLIRCloudLib'

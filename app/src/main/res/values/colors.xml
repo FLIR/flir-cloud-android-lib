@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#CCCCCC</color>
+
+    <color name="colorPrimaryDark">#CCCCCC</color>
+    <color name="colorAccent">#000000</color>
+
+    <color name="flir_color_primary">#4A4A4A</color>
+
+    <color name="flir_account_page_text_color">#000000</color>
+
+    <color name="splash_screen_background_color">#FFFFFF</color>
+
+    <color name="change_password_background_color_state_selected">#FFFFFF</color>
+    <color name="change_password_background_color_state_unselected">#CCCCCC</color>
+    <color name="login_page_edit_text_background">#3B3B3B</color>
+    <color name="forgot_password_page_edit_text_background">#3B3B3B</color>
+    <color name="sign_up_page_edit_text_background">#3B3B3B</color>
+    <color name="login_page_edit_text_floating_text_color">#ffffff</color>
+    <color name="login_page_edit_text_hint_text_color">#CCCCCC</color>
+    <color name="login_page_button_background">#ECEEF1</color>
+    <color name="forgot_password_page_button_background">#ECEEF1</color>
+    <color name="login_page_text_color">#ffa300</color>
+    <color name="select_account_text_color">#ffa300</color>
+    <color name="login_page_edit_text_color">#FFFFFF</color>
+
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+
+    <color name="acl_device_success_request">#4CFF00</color>
+    <color name="acl_device_failure_request">#FF0000</color>
+    <color name="main_page_menu_text_color">#CCCCCC</color>
+    <color name="main_page_tool_bar_title_mask_color">#FFFFFF</color>
+    <color name="main_page_my_devices">#FDB65C</color>
+    <color name="main_page_settings_button_background">#70B8F3</color>
+    <color name="main_page_record_folder_button_background">#C86550</color>
+
+    <color name="translucent_scrim_top">#26000000</color>
+    <color name="translucent_scrim_top_center">#0C000000</color>
+    <color name="translucent_scrim_bottom">#32000000</color>
+    <color name="translucent_scrim_bottom_center">#26000000</color>
+    <color name="update_details_page_title_text_color">#000000</color>
+
+    <color name="carousel_page_text_color">#ffa300</color>
+
+   <!-- <color name="lambda_custom_progress_bar_background_color">#CCCCCC</color>
+    <color name="lambda_custom_progress_bar_circle_progress_color">#70B8F3</color>
+    <color name="lambda_custom_progress_bar_circle_un_progress_color">#3F51B5</color>-->
+    <color name="devices_carousel_button_background">#ffffff</color>
+
+    <color name="lambda_custom_progress_bar_background_color">#CCCCCC</color>
+    <color name="lambda_custom_progress_bar_circle_progress_color">#f79a1e</color>
+    <color name="lambda_custom_progress_bar_circle_un_progress_color">#00602c8f</color>
+
+    <color name="file_explorer_delete_color">#ff6550</color>
+    <color name="file_explorer_folder_color">#FFE793</color>
+    <color name="file_explorer_file_details_text_color">#FFFFFF</color>
+    <color name="file_explorer_file_details_background_color">#5fa3d0</color>
+    <color name="file_explorer_file_details_cancel_button_text_color">#FFCC00</color>
+
+    <color name="add_tag_custom_view_button_background">#6E79B2</color>
+
+    <color name="playback_speed_indicator_text_color">#FFFFFF</color>
+    <color name="camera_view_bottom_bar_background_selector_start_normal_state">#FFFFFF</color>
+    <color name="camera_view_bottom_bar_background_selector_end_normal_state">#CCCCCC</color>
+    <color name="camera_view_bottom_bar_background_selector_pressed_state">#FFFFFF</color>
+
+    <color name="main_page_background_list_items_color">#82B1FF</color>
+    <color name="main_page_header_background_color">#ffffff</color>
+    <color name="main_page_footer_background_color">#E3F2FD</color>
+
+    <color name="select_channel_background_color">#E3F2FD</color>
+
 </resources>

@@ -1,0 +1,58 @@
+apply plugin: 'com.android.library'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'lambdakeystore'
+            keyPassword 'Lambda2017'
+            storeFile file('C:/Users/Moti/Documents/LambdaAppKeys/app_key.jks')
+            storePassword 'Lambda2017'
+        }
+    }
+    compileSdkVersion 27
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    // RxAndroid
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
+
+    //Evernote-Android-Job - remove in production (UnitTest)
+    implementation 'com.evernote:android-job:1.2.6'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.hamcrest:hamcrest-library:1.2'
+    testImplementation 'org.awaitility:awaitility:3.0.0'
+}
+

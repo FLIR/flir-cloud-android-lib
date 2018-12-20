@@ -1,0 +1,24 @@
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="password_page_edit_text_padding_top">25dp</dimen>
+    <dimen name="forgot_password_page_login_button_margin_top">15dp</dimen>
+    <dimen name="login_page_login_button_margin_top">15dp</dimen>
+    <dimen name="login_page_sign_up_text_margin_top">18dp</dimen>
+    <dimen name="login_page_margin_bottom">10dp</dimen>
+    <dimen name="signup_page_signup_button_margin_bottom">80dp</dimen>
+
+    <dimen name="tab_max_width">264dp</dimen>
+    <dimen name="tab_padding_bottom">16dp</dimen>
+    <dimen name="tab_label">14sp</dimen>
+    <dimen name="custom_tab_layout_height">72dp</dimen>
+
+    <dimen name="video_view_time_line_top_layout_height">60dp</dimen>
+    <dimen name="video_view_time_line_bottom_layout_height">60dp</dimen>
+
+    <dimen name="carousel_flir_icon_size">100dp</dimen>
+
+</resources>

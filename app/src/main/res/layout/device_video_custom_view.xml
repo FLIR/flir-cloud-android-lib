@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+
+    <FrameLayout
+        android:id="@+id/fl_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <com.devbrackets.android.exomedia.ui.widget.VideoView
+            android:id="@+id/exo_media_video_view_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            app:useDefaultControls="true"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_thumbnail_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/video_thumbnail_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/play_video_button"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:background="#00ffffff"
+            android:src="@drawable/ic_play_button" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_speed_text_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_view_speed_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text=""
+            android:textSize="25sp"
+            android:textColor="@color/playback_speed_indicator_text_color"
+            />
+    </FrameLayout>
+
+</FrameLayout>

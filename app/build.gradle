@@ -1,28 +1,110 @@
 apply plugin: 'com.android.application'
+//apply plugin: 'me.tatarka.retrolambda'
+
+
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'lambdakeystore'
+            keyPassword 'Lambda2017'
+            storeFile file('C:/Users/Moti/Documents/LambdaAppKeys/app_key.jks')
+            storePassword 'Lambda2017'
+        }
+        dexOptions {
+            jumboMode true
+        }
+    }
     compileSdkVersion 28
+    buildToolsVersion "28.0.3"
     defaultConfig {
-        applicationId "com.flir.androidLib"
-        minSdkVersion 15
+        applicationId "com.flir.cloud"
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "int", "LIMIT", "100"
+        buildConfigField "String", "BASEURL", "\"https:/lambda.cloud.flir/\""
+        buildConfigField "int", "CACHETIME", "432000" // 5days
+
+        multiDexEnabled true
     }
     buildTypes {
-        release {
+        /*release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.config
+            minifyEnabled true
+            shrinkResources true
+        }*/
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dexOptions {
+        jumboMode true
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    implementation 'net.opacapp:multiline-collapsingtoolbar:1.4.0'
+    implementation 'com.f2prateek.progressbutton:progressbutton:2.1.0@aar'
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    // Butter Knife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    // Dagger 2
+    implementation 'com.google.dagger:dagger:2.11'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.9'
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    //retro lambada
+    //retrolambdaConfig 'net.orfjackal.retrolambda:retrolambda:2.5.1'
+    // RxAndroid
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
+    //Paho & jetty
+    implementation('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2') {
+        exclude module: 'support-v4'
+    }
+    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.1'
+    implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+  /*  implementation 'org.eclipse.jetty:jetty-io:9.2.14.v20151106'
+    implementation 'org.eclipse.jetty:jetty-util:9.2.14.v20151106'
+    implementation 'org.eclipse.jetty.websocket:websocket-api:9.2.14.v20151106'
+    implementation 'org.eclipse.jetty.websocket:websocket-client:9.2.14.v20151106'*/
+    implementation 'com.devbrackets.android:exomedia:4.2.0'
+    implementation 'com.google.firebase:firebase-core:16.0.6'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.12'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // Optional -- Mockito framework
+    testImplementation 'org.mockito:mockito-core:2.7.17'
+    testImplementation 'com.squareup.okhttp3:mockwebserver:3.10.0'
+    implementation project(path: ':FLIRCloudLib')
 }
+
+apply plugin: 'com.google.gms.google-services'

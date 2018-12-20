@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:id="@+id/ll_login_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.Authentication.Login.LoginActivity"
+        android:background="@color/flir_color_primary"
+        >
+
+        <ImageButton
+            android:id="@+id/change_base_url"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#00000000"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_settings" />
+
+        <ImageView
+            android:layout_marginTop="80dp"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:src="@drawable/flir_logo_white_color"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/TextLabel"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/input_username"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:background="@color/login_page_edit_text_background"
+                android:ems="10"
+                android:layout_marginBottom="10dp"
+                android:textSize="17sp"
+                android:hint="@string/username"
+                android:textColorHighlight="#ff0000"
+                android:textColor="@color/login_page_edit_text_color"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/TextLabel"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/input_password"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:background="@color/login_page_edit_text_background"
+                android:ems="10"
+                android:layout_marginBottom="10dp"
+                android:textSize="17sp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColorHighlight="#ff0000"
+                android:textColor="@color/login_page_edit_text_color"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/thermal_background_api_selector"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="@dimen/login_page_login_button_margin_top"
+            android:fontFamily="@font/industry_bold"
+            android:text="@string/login" />
+
+        <TextView
+            android:id="@+id/sign_up_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/login_page_text_color"
+            android:layout_marginTop="@dimen/login_page_sign_up_text_margin_top"
+            android:fontFamily="@font/industry_bold"
+            android:text="@string/login_page_sign_up_text"/>
+
+        <TextView
+            android:id="@+id/forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/login_page_text_color"
+            android:layout_marginTop="@dimen/login_page_sign_up_text_margin_top"
+            android:fontFamily="@font/industry_bold"
+            android:text="@string/login_page_forgot_password_text"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_flir_splash_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/flir_color_primary" />
+
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                android:src="@drawable/flir_logo_white_color" />
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/gif_thermal_view_splash_screen"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/splash_gif" />
+
+        </FrameLayout>
+    </LinearLayout>
+
+
+    <com.flir.cloud.ui.Views.LambdaCustomProgressBar
+        android:id="@+id/lambda_custom_progress_bar_login"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</FrameLayout>

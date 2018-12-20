@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+        <layer-list>
+
+            <item>
+                <shape>
+                    <solid android:angle="270" android:color="@color/camera_view_bottom_bar_background_selector_pressed_state"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <item android:state_enabled="true">
+        <layer-list>
+
+            <item>
+                <shape android:shape="rectangle">
+                    <gradient android:angle="270" android:endColor="@color/camera_view_bottom_bar_background_selector_end_normal_state" android:startColor="@color/camera_view_bottom_bar_background_selector_start_normal_state" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+
+</selector>

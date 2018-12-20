@@ -1,3 +1,326 @@
 <resources>
-    <string name="app_name">FLIR-cloud-android-lib</string>
+    <string name="app_name">CloudApp</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">email</string>
+    <string name="password">Password</string>
+    <string name="phone">Phone</string>
+    <string name="signup">Sign up</string>
+    <string name="update">Update</string>
+    <string name="username">Username</string>
+
+    <string name="dialog_massage_massage">Are you sure you want to exit\?</string>
+    <string name="dialog_massage_yes">YES</string>
+    <string name="dialog_massage_no">NO</string>
+
+    <string name="dialog_delete_massage_massage">Are you sure you want to delete</string>
+
+    <string name="login">Login</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="change_password">Change Password</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="password_too_short">The password must be at least 8 characters</string>
+    <string name="action_settings">Settings</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="id">id</string>
+    <string name="owner">owner</string>
+    <string name="accountType">accountType</string>
+    <string name="accountTypeFlir">flir</string>
+    <string name="verified">verified</string>
+    <string name="url">url</string>
+    <string name="create">create</string>
+    <string name="update_account">Update Account</string>
+    <string name="get_account">Get</string>
+    <string name="account_name">Account Name</string>
+    <string name="user_name">user name</string>
+    <string name="log_out">Logout</string>
+    <string name="login_page_sign_up_text">Not a member? Sign up now.</string>
+    <string name="login_page_forgot_password_text">Forgot your password?</string>
+    <string name="reset_password">RESET PASSWORD</string>
+    <string name="key">key</string>
+    <string name="value">value</string>
+    <string name="info">info</string>
+    <string name="acl_serial">Serial</string>
+    <string name="acl_name">name</string>
+    <string name="acl_add_device">Add Device</string>
+    <string name="acl_get_device">Get Device</string>
+    <string name="acl_get_all_devices">Get Devices</string>
+    <string name="acl_update_device">Update Device Details</string>
+    <string name="change_time_zone">Change Time Zone</string>
+    <string name="acl_share_device">share</string>
+    <string name="acl_share_device_dialog_title">Share \u0026 Unshare Device</string>
+    <string name="acl_share_device_dialog_content">Please enter an email to share your device:</string>
+    <string name="acl_un_share_device_dialog_content">Please select which account you do not want to share:</string>
+    <string name="acl_share_device_dialog_hint">Email address</string>
+    <string name="acl_share_device_dialog_share_device">Share Device</string>
+    <string name="acl_un_share_device_dialog">Un Share Device</string>
+    <string name="acl_email">Account Email</string>
+    <string name="acl_unshare_device">Unshare Device</string>
+    <string name="acl_get_all_shared_devices">Get All Shared Devices</string>
+    <string name="acl_unshare_select_device">Select Device</string>
+    <string name="title_dialog_device_chooser_un_share">Select Device</string>
+    <string name="title_dialog_device_chooser_action">Select Action</string>
+    <string name="title_dialog_device_chooser_share">Select Device To Share</string>
+    <string name="acl_select_device_to_delete">Select Device To Delete</string>
+    <string name="acl_delete_device">Delete Device</string>
+
+    <string name="account_create_account">Create Account</string>
+    <string name="account_update_account">Update Account</string>
+    <string name="account_select_account">Select Account</string>
+    <string name="account_change_account">Change Account</string>
+    <string name="account_change_password">Change Password</string>
+    <string name="account_change_password_confirm_password">Confirm Password</string>
+    <string name="account_change_password_succeed_dialog_title">Change Password Succeed</string>
+    <string name="account_change_password_failed_dialog_title">Change Password Failed</string>
+    <string name="account_change_password_dialog_content">Please reconnect to your account</string>
+    <string name="account_change_password_dialog_agree">OK</string>
+    <string name="account_page_welcome">Welcome! Please choose your account:</string>
+    <string name="account_select_account_name">Please select account name</string>
+    <string name="account_dialog_account_name_hint">flir</string>
+
+    <string name="acl_delete_device_dialog_title">Processing</string>
+    <string name="dialog_content_please_wait">Please Wait</string>
+    <string name="device_get_device_state">Get Device State</string>
+    <string name="device_select_channel">Select Channel</string>
+    <string name="device_show_state">State List:</string>
+    <string name="device_show_device_state">Show Device State</string>
+    <string name="device_update_desired">update desired</string>
+    <string name="device_update_desired_expired_at">Expired At</string>
+    <string name="device_update_desired_version">version</string>
+    <string name="device_start_recording">start recording</string>
+    <string name="device_stop_recording">stop recording</string>
+    <string name="device_device_action">Action</string>
+    <string name="dialog_done">Done</string>
+    <string name="device_key_sd_card_recording">sdCardRecording</string>
+    <string name="device_key_resolution">Resolution</string>
+    <string name="update_details_page_title">Update Profile</string>
+    <string name="update_page_upload_picture">Change Picture</string>
+    <string name="update_page_update_user_details">Update Details</string>
+    <string name="carousel_item_settings_dialog">Settings Device</string>
+    <string name="switch_button_start_recording">Recording Mode - Start Recording</string>
+    <string name="switch_button_stop_recording">Recording Mode - Stop Recording</string>
+    <string name="carousel_item_settings_resolution">Resolution</string>
+
+    <string name="video_page_top_editor_go_to">Go To</string>
+    <string name="video_page_top_editor_button_go_text">Go</string>
+    <string name="video_page_top_editor_text_view_from">From</string>
+    <string name="video_page_top_editor_text_view_to">To</string>
+    <string name="video_page_top_editor_export">Export</string>
+
+    <string name="carousel_add_device_item">Tap To Add Device</string>
+
+    <string name="cloud_storage_lambda_cloud_storage_title">Lambda Cloud Storage</string>
+    <string name="cloud_storage_lambda_add_new_folder">Add New Folder</string>
+
+    <string name="cloud_storage_lambda_notification_content_in_progress">In Progress</string>
+    <string name="cloud_storage_lambda_notification_content_update">Update</string>
+    <string name="cloud_storage_lambda_notification_content_upload">Upload</string>
+    <string name="cloud_storage_lambda_notification_content_download">Download</string>
+
+    <string name="cloud_storage_lambda_notification_content_complete">Complete</string>
+    <string name="cloud_storage_lambda_notification_content_failed">Failed</string>
+
+    <string name="file_explorer_folder_name_item">folder name</string>
+    <string name="file_explorer_add_folder_item">Add New Volume</string>
+    <string name="file_explorer_file_name">File Name</string>
+    <string name="file_explorer_upload_file_item">Upload File</string>
+    <string name="file_explorer_choose_file_item">Choose File</string>
+    <string name="file_explorer_delete_file_item">Are you sure you want to delete file\?</string>
+    <string name="file_explorer_update_volume_item">Update Volume</string>
+    <string name="file_explorer_button_add_volume">Add Volume</string>
+    <string name="file_explorer_rename_file_title">Rename File</string>
+    <string name="file_explorer_file_details_title">File Details</string>
+    <string name="file_explorer_file_details_file_name">File Name</string>
+    <string name="file_explorer_file_details_size">Size</string>
+    <string name="file_explorer_file_details_bytes">Bytes</string>
+    <string name="file_explorer_file_details_created">Created</string>
+    <string name="file_explorer_file_details_modified">Modified</string>
+    <string name="file_explorer_file_details_cancel">Cancel</string>
+    <string name="file_explorer_new_name_file">To</string>
+
+    <string name="tag_custom_view_add_new_tag">Tap To Create New Tag</string>
+    <string name="tag_custom_view_add_new_tag_dialog_">Tap To Create New Tag</string>
+    <string name="tag_custom_view_add_new_tag_dialog_tag_name">Tag Name</string>
+    <string name="tag_custom_view_add_new_tag_dialog_tag_name_hint">select tag name</string>
+    <string name="tag_custom_view_add_new_tag_dialog_error_message">You cannot create another tag with the same name</string>
+
+
+    <string name="tag_custom_view_add_tag_test">Tap To Add Tags</string>
+    <string name="tag_custom_view_add_new_value_title">Add New Value To </string>
+    <string name="tag_custom_view_add_new_value_tag_title"> Tag</string>
+    <string name="tag_custom_view_add_new_value_hint">new value</string>
+    <string name="tag_custom_tags_view_title">"Tags -"</string>
+
+    <string name="playback_service_export_file_download">Download Video</string>
+    <string name="playback_service_export_file_download_from">From</string>
+    <string name="playback_service_export_file_download_to">To</string>
+    <string name="playback_service_export_file_download_in_progress">Download In Progress</string>
+    <string name="playback_service_export_file_download_complete">Download Complete</string>
+    <string name="playback_service_export_file_download_failed">Download Failed</string>
+
+    <string name="state_list_search">Search item</string>
+
+
+    <string-array name="left_drawer_array">
+        <item>Home</item>
+        <item>Sample</item>
+        <item>Help</item>
+        <item>Favorites</item>
+        <item>Settings</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="account_page_title">
+        <item>Create</item>
+        <item>Update</item>
+        <item>Get</item>
+    </string-array>
+
+    <string-array name="acl_grid_options">
+        <item>Add Device</item>
+        <item>Get Device</item>
+        <item>Get Devices</item>
+        <item>Update Device</item>
+        <item>Delete Device</item>
+        <item>Share Device</item>
+        <item>UnShare Device</item>
+        <item>Get Shared Users</item>
+    </string-array>
+
+    <string-array name="spinner_resolution_list">
+        <item>720p</item>
+        <item>1080p</item>
+    </string-array>
+
+    <string-array name="spinner_time_zone_list"  translatable="false">
+        <item>NONE</item>
+        <item>Pacific/Pago_Pago</item>
+        <item>Pacific/Honolulu</item>
+        <item>America/Anchorage</item>
+        <item>America/Vancouver</item>
+        <item>America/Los_Angeles</item>
+        <item>America/Tijuana</item>
+        <item>America/Edmonton</item>
+        <item>America/Denver</item>
+        <item>America/Phoenix</item>
+        <item>America/Mazatlan</item>
+        <item>America/Winnipeg</item>
+        <item>America/Regina</item>
+        <item>America/Chicago</item>
+        <item>America/Mexico_City</item>
+        <item>America/Guatemala</item>
+        <item>America/El_Salvador</item>
+        <item>America/Managua</item>
+        <item>America/Costa_Rica</item>
+        <item>America/Montreal</item>
+        <item>America/New_York</item>
+        <item>America/Indianapolis</item>
+        <item>America/Panama</item>
+        <item>America/Bogota</item>
+        <item>America/Lima</item>
+        <item>America/Halifax</item>
+        <item>America/Puerto_Rico</item>
+        <item>America/Caracas</item>
+        <item>America/Santiago</item>
+        <item>America/St_Johnsand</item>
+        <item>America/Sao_Paul</item>
+        <item>Atlantic/Azores</item>
+        <item>Atlantic/Reykjavik</item>
+        <item>Europe/Dublin</item>
+        <item>Europe/London</item>
+        <item>Europe/Lisbon</item>
+        <item>Africa/Casablanca</item>
+        <item>Africa/Nouakchott</item>
+        <item>Europe/Oslo</item>
+        <item>Europe/Stockholm</item>
+        <item>Europe/Copenhagen</item>
+        <item>Europe/Berlin</item>
+        <item>Europe/Amsterdam</item>
+        <item>Europe/Brussels</item>
+        <item>Europe/Luxembourg</item>
+        <item>Europe/Paris</item>
+        <item>Europe/Zurich</item>
+        <item>Europe/Madrid</item>
+        <item>Europe/Rome</item>
+        <item>Africa/Algiers</item>
+        <item>Africa/Tunis</item>
+        <item>Europe/Warsaw</item>
+        <item>Europe/Prague</item>
+        <item>Europe/Vienna</item>
+        <item>Europe/Budapest</item>
+        <item>Europe/Sofia</item>
+        <item>Europe/Istanbul</item>
+        <item>Europe/Athens</item>
+        <item>Asia/Nicosia</item>
+        <item>Asia/Beirut</item>
+        <item>Asia/Damascus</item>
+        <item>Asia/Jerusalem</item>
+        <item>Asia/Amman</item>
+        <item>Africa/Tripoli</item>
+        <item>Africa/Cairo</item>
+        <item>Africa/Johannesburg</item>
+        <item>Europe/Moscow</item>
+        <item>Asia/Baghdad</item>
+        <item>Asia/Kuwait</item>
+        <item>Asia/Riyadh</item>
+        <item>Asia/Bahrain</item>
+        <item>Asia/Qatar</item>
+        <item>Asia/Aden</item>
+        <item>Africa/Khartoum</item>
+        <item>Africa/Djibouti</item>
+        <item>Africa/Mogadishu</item>
+        <item>Asia/Dubai</item>
+        <item>Asia/Muscat</item>
+        <item>Asia/Yekaterinburg</item>
+        <item>Asia/Tashkent</item>
+        <item>Asia/Calcutta</item>
+        <item>Asia/Novosibirsk</item>
+        <item>Asia/Almaty</item>
+        <item>Asia/Dacca</item>
+        <item>Asia/Krasnoyarsk</item>
+        <item>Asia/Bangkok</item>
+        <item>Asia/Saigon</item>
+        <item>Asia/Jakarta</item>
+        <item>Asia/Irkutsk</item>
+        <item>Asia/Shanghai</item>
+        <item>Asia/Hong_Kong</item>
+        <item>Asia/Taipei</item>
+        <item>Asia/Kuala_Lumpur</item>
+        <item>Asia/Singapore</item>
+        <item>Australia/Perth</item>
+        <item>Asia/Yakutsk</item>
+        <item>Asia/Seoul</item>
+        <item>Asia/Tokyo</item>
+        <item>Australia/Darwin</item>
+        <item>Australia/Adelaide</item>
+        <item>Asia/Vladivostok</item>
+        <item>Australia/Brisbane</item>
+        <item>Australia/Sydney</item>
+        <item>Australia/Hobart</item>
+        <item>Asia/Magadan</item>
+        <item>Asia/Kamchatka</item>
+        <item>Pacific/Auckland</item>
+    </string-array>
+
+
+    <string-array name="device_grid_options">
+        <item>Device State</item>
+        <item>Update Desired</item>
+        <item>Presigned Upload Url</item>
+        <item>Download File</item>
+    </string-array>
+
+    <string-array name="device_action_list">
+        <item>Start Recording</item>
+        <item>Stop Recording</item>
+    </string-array>
+
+    <string-array name="device_attribute_list">
+        <item>thumbnail</item>
+    </string-array>
+
 </resources>

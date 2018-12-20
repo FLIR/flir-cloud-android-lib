@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "872721961007",
+    "firebase_url": "https://flir-lambda.firebaseio.com",
+    "project_id": "flir-lambda",
+    "storage_bucket": "flir-lambda.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872721961007:android:61282dc91bba2fa8",
+        "android_client_info": {
+          "package_name": "com.flir.cloud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "872721961007-gn9ke5g4dcvfb5p9a5ndep4n4r1j3e9u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flir.lambda",
+            "certificate_hash": "6b8546772bdc9c94f02165e9c80bcedcc105ffc7"
+          }
+        },
+        {
+          "client_id": "872721961007-pc3jduduutb3f42qvifjb0oadv7nsbg4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3WVCuS972-7Y8eA0_SsWWzwDbpHP4gSM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "872721961007-pc3jduduutb3f42qvifjb0oadv7nsbg4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -8,7 +8,7 @@ android {
         config {
             keyAlias 'lambdakeystore'
             keyPassword 'Lambda2017'
-            storeFile file('C:/Users/Moti/Documents/LambdaAppKeys/app_key.jks')
+            //storeFile file('C:/Users/Moti/Documents/LambdaAppKeys/app_key.jks')
             storePassword 'Lambda2017'
         }
         dexOptions {
@@ -83,7 +83,7 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-compiler:2.9'
     compileOnly 'javax.annotation:jsr250-api:1.0'
     //retro lambada
-    //retrolambdaConfig 'net.orfjackal.retrolambda:retrolambda:2.5.1'
+
     // RxAndroid
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
@@ -93,10 +93,6 @@ dependencies {
     }
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.1'
     implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
-  /*  implementation 'org.eclipse.jetty:jetty-io:9.2.14.v20151106'
-    implementation 'org.eclipse.jetty:jetty-util:9.2.14.v20151106'
-    implementation 'org.eclipse.jetty.websocket:websocket-api:9.2.14.v20151106'
-    implementation 'org.eclipse.jetty.websocket:websocket-client:9.2.14.v20151106'*/
     implementation 'com.devbrackets.android:exomedia:4.2.0'
     implementation 'com.google.firebase:firebase-core:16.0.6'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.12'

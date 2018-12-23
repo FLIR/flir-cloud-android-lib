@@ -23,6 +23,12 @@ buildscript {
 }
 
 apply plugin: 'android-maven'
+apply plugin: 'com.github.dcendents.android-maven'
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.6' //version required
+}
 
 allprojects {
     repositories {

@@ -12,7 +12,7 @@ android {
             storePassword 'Lambda2017'
         }
     }
-    compileSdkVersion 27
+    compileSdkVersion 28
     buildToolsVersion '28.0.3'
     defaultConfig {
         minSdkVersion 16
@@ -36,6 +36,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')

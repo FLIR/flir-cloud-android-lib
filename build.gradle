@@ -22,6 +22,8 @@ buildscript {
         // in the individual module build.gradle files
 }
 
+apply plugin: 'android-maven'
+
 allprojects {
     repositories {
         jcenter()
@@ -42,7 +44,9 @@ allprojects {
     }
 }
 
-
+/*
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+*/
+

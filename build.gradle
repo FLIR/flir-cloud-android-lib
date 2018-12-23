@@ -3,7 +3,7 @@
 buildscript {
     repositories {
         jcenter()
-        maven { url 'http://repo1.maven.org/maven2' }
+        //maven { url 'http://repo1.maven.org/maven2' }
         google()
     }
     dependencies {
@@ -14,21 +14,19 @@ buildscript {
         classpath "io.realm:realm-gradle-plugin:2.3.0"
         classpath 'com.google.gms:google-services:4.2.0'
         classpath 'me.tatarka:gradle-retrolambda:3.7.0'
-        classpath ('com.google.firebase:firebase-plugins:1.1.0') {
+     /*   classpath ('com.google.firebase:firebase-plugins:1.1.0') {
             exclude group: 'com.google.guava', module: 'guava-jdk5'
-        }
+        }*/
     }
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
 }
 
-apply plugin: 'android-maven'
-apply plugin: 'com.github.dcendents.android-maven'
+/*apply plugin: 'android-maven'
+apply plugin: 'java'
+apply plugin: 'com.github.dcendents.android-maven'*/
 
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.6' //version required
-}
 
 allprojects {
     repositories {
@@ -41,8 +39,8 @@ allprojects {
         maven {
             url "https://repo.eclipse.org/content/repositories/paho-releases/"
         }
-        maven { url 'https://maven.fabric.io/public' }
-        maven { url 'http://repo1.maven.org/maven2' }
+        //maven { url 'https://maven.fabric.io/public' }
+        //maven { url 'http://repo1.maven.org/maven2' }
         maven {
             url "https://maven.google.com" // Google's Maven repository
         }

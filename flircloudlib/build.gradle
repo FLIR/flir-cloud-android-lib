@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-/*apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.github.dcendents.android-maven'
 
 
 
@@ -9,8 +9,6 @@ repositories {
     jcenter()
     maven { url "https://jitpack.io" }
 }
-
-group='com.github.MotiAmarFlir'*/
 
 android {
     signingConfigs {

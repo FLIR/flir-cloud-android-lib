@@ -1,7 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
-group='com.github.FLIR'
+group='com.github.MotiAmarFlir'
+version = '1.0.13'
 
 repositories {
     mavenCentral()

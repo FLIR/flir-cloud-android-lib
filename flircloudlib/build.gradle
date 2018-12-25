@@ -43,21 +43,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    if( android.productFlavors.size() > 0 ) {
-        android.libraryVariants.all { variant ->
-            // Publish a main artifact, otherwise the maven pom is not generated
-            if( android.publishNonDefault && variant.name == android.defaultPublishConfig ) {
-                def bundleTask = tasks["bundle${name.capitalize()}"]
-                artifacts {
-                    archives(bundleTask.archivePath) {
-                        classifier null
-                        builtBy bundleTask
-                    }
-                }
-            }
-        }
-    }
 }
 
 

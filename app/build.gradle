@@ -114,5 +114,3 @@ dependencies {
     implementation project(path: ':FLIRCloudLib')
 
 }
-
-apply plugin: 'com.google.gms.google-services'

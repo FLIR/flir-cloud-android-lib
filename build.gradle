@@ -1,4 +1,9 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin:'maven'
+
+group='com.github.MotiAmarFlir'
+version = '1.0.13'
 
 buildscript {
     repositories {

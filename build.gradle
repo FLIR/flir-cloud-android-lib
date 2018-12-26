@@ -2,7 +2,7 @@
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin:'maven'
 
-group='com.github.MotiAmarFlir'
+group='com.github.FLIR'
 version = '1.0.13'
 
 buildscript {

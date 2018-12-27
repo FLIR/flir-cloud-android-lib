@@ -119,22 +119,3 @@ dependencies {
     implementation project(path: ':FLIRCloudLib')
 
 }
-
-task writeNewPom << {
-    pom {
-        project {
-            groupId 'com.flir'
-            artifactId 'lambdaLib'
-            version '1.0.0'
-
-            inceptionYear '2018'
-            licenses {
-                license {
-                    name 'The Apache Software License, Version 2.0'
-                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    distribution 'repo'
-                }
-            }
-        }
-    }.writeTo("$buildDir/newpom.xml")
-}

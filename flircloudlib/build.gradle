@@ -13,14 +13,14 @@ repositories {
 }
 
 android {
-    signingConfigs {
+    /*signingConfigs {
         config {
             keyAlias 'lambdakeystore'
             keyPassword 'Lambda2017'
             storeFile file('C:/Users/Moti/Documents/LambdaAppKeys/app_key.jks')
             storePassword 'Lambda2017'
         }
-    }
+    }*/
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
     defaultConfig {
@@ -31,14 +31,14 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-        release {
+        /*release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
         }
         debug {
             signingConfig signingConfigs.config
-        }
+        }*/
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

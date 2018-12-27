@@ -63,12 +63,10 @@ public class NetworkModule {
     }
 }
 
-````
+```
 
 Component
 A component is composed of one or more modules. It performs the actual injection and is also responsible for holding instances of dependencies which have been declared as singletons. This concept is important to understand! As long as the same component reference is used, the same singleton instances will be provided by this component. The developer is responsible for holding component references and releasing them when necessary. Only when the component is eligible for garbage collection will it's singletons be GC'd, too. This applies for module instances which were passed to a component, too. Module instances should only be held by a component and not stored anywhere else. Especially when the module provides object instances outside of it's own scope which were passed to the module during creation.
-
-The component pattern has been introduced so that – especially in an Android environment – it is possible to inject objects that should be released when the view has been destroyed, like for example the current Context.
 
 Example of app component:
 
@@ -81,5 +79,22 @@ public interface ApplicationComponent {
     void inject(LoginActivity loginActivity);
 }
 
-````
+```
 
+The component pattern has been introduced so that – especially in an Android environment – it is possible to inject objects that should be released when the view has been destroyed, like for example the current Context.
+
+Example of activity injection :
+
+```java 
+
+    @Inject
+    AuthenticationProvider authenticationProvider;
+    
+     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_account);
+        ((MainApplication) getApplication()).getApplicationComponent().inject(this);
+    }
+    
+    ```

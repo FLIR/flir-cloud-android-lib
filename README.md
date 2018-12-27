@@ -1,6 +1,6 @@
 # FLIR-cloud-android-lib
 
-FLIR Cloud library is a java library that allows developers to simply use in FLIR Cloud Services
+FLIR Cloud library is a dependency injection library that allows developers to simply use in FLIR Cloud Services
 
 FLIR Cloud Services are cloud-based services designed and built to connect users, systems, and devices within a secure ecosystem that leverages unique FLIR technology.
 
@@ -39,5 +39,30 @@ Step 2. Add the dependency
 	}
 
 
-How to use? 
+# Getting started
+FLIR Cloud library consists of two core concepts: modules and components.
+
+### Module
+A module describes how dependencies are provided. 
+Each module should represent a logical unit. For instance there might be a module for every feature of your application. 
+
+Example of Network Module:
+```java
+@Module
+public class NetworkModule {
+
+    @Provides ServiceGenerator provideServiceApi(){
+        ServiceGenerator serviceGenerator = new ServiceGenerator<AuthenticationServiceApi>(LambdaSharedPreferenceManager.getInstance().getLambdaPrefsValue(LambdaSharedPreferenceManager.LAMBDA_BASE_URL,"https:/lambda.cloud.flir/"));
+        return serviceGenerator;
+    }
+    @Singleton
+    @Provides
+    AuthenticationProvider provideAuthenticationToken(SharedPreferences sharedPreferences){
+        AuthenticationBase authenticationParams = new AuthenticationBase(sharedPreferences);
+        return authenticationParams;
+    }
+}
+
+````
+
 

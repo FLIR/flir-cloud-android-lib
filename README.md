@@ -13,9 +13,13 @@ In a managed environment that is open, highly available and scalable, FLIR Cloud
 • A data processing framework with scalable processing using built-in FLIR image and video processing technology or customized data processors 
 • Real-time messaging for dynamic data exchange between devices, users, and services
 
-# Offical Documantaion for FLIR Cloud Services:
+# Privacy Policy
+Before using the FLIR Cloud API, read our Privacy Policy:
+https://www.flir.com/corporate/privacy-policy/
+
+# Official Documentation for FLIR Cloud Services:
 	
-	https://int-api.cloud.flir/
+https://int-api.cloud.flir/
 	
 # Using FLIR-cloud-lib
 

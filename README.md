@@ -21,22 +21,16 @@ https://www.flir.com/corporate/privacy-policy/
 	
 https://int-api.cloud.flir/
 	
-# Using FLIR-cloud-lib
+# Installation & Setup
 
-Add it in your root build.gradle at the end of repositories:
+FLIR cloud library is published via [JitPack](https://jitpack.io/#rewe-digital-incubator/katana). First add the JitPack repository
+as described in JitPack's documentation, then add the following dependencies:
 
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
-	
-Step 2. Add the dependency
-
-	dependencies {
-	        implementation 'com.github.FLIR:flir-cloud-android-lib:1.0.24'
-	}
+```gradle
+dependencies {
+     implementation 'com.github.FLIR:flir-cloud-android-lib:1.0.24'
+}
+```
 
 
 # Getting started

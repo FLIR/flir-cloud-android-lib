@@ -1,0 +1,1 @@
+[{"outputType":{"type":"MERGED_MANIFESTS"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":3220303,"versionName":"3.22.03.03","enabled":true,"outputFile":"ffmpeg4android_demo-release-unsigned.apk","fullName":"release","baseName":"release"},"path":"AndroidManifest.xml","properties":{"packageId":"com.examples.ffmpeg4android_demo","split":"","minSdkVersion":"19"}}]

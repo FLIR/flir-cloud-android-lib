@@ -1,0 +1,90 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_lib\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_lib\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "6,12,2",
+                        "startColumns": "0,0,0",
+                        "startOffsets": "201,404,53",
+                        "endLines": "10,16,5",
+                        "endColumns": "8,8,8",
+                        "endOffsets": "400,603,199"
+                    },
+                    "to": {
+                        "startLines": "14,19,24",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "1260,1460,1660",
+                        "endLines": "18,23,27",
+                        "endColumns": "8,8,8",
+                        "endOffsets": "1455,1655,1803"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_lib\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "3,14,13,4,5,7,9,10,6",
+                        "startColumns": "0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "52,1022,884,90,142,324,508,639,200",
+                        "endLines": "3,14,13,4,5,8,9,12,6",
+                        "endColumns": "37,198,137,51,57,101,130,88,123",
+                        "endOffsets": "89,1220,1021,141,199,507,638,883,323"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,9,10,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,97,300,442,498,560,748,883,1132",
+                        "endLines": "2,3,4,5,6,8,9,12,13",
+                        "endColumns": "41,202,141,55,61,101,134,88,127",
+                        "endOffsets": "92,295,437,493,555,743,878,1127,1255"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_lib\\build\\intermediates\\res\\merged\\release\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_lib\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "6,12,2",
+                        "startColumns": "0,0,0",
+                        "startOffsets": "201,404,53",
+                        "endLines": "10,16,5",
+                        "endColumns": "8,8,8",
+                        "endOffsets": "400,603,199"
+                    },
+                    "to": {
+                        "startLines": "14,19,24",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "1260,1460,1660",
+                        "endLines": "18,23,27",
+                        "endColumns": "8,8,8",
+                        "endOffsets": "1455,1655,1803"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_lib\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "3,14,13,4,5,7,9,10,6",
+                        "startColumns": "0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "52,1022,884,90,142,324,508,639,200",
+                        "endLines": "3,14,13,4,5,8,9,12,6",
+                        "endColumns": "37,198,137,51,57,101,130,88,123",
+                        "endOffsets": "89,1220,1021,141,199,507,638,883,323"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,9,10,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,97,300,442,498,560,748,883,1132",
+                        "endLines": "2,3,4,5,6,8,9,12,13",
+                        "endColumns": "41,202,141,55,61,101,134,88,127",
+                        "endOffsets": "92,295,437,493,555,743,878,1127,1255"
+                    }
+                }
+            ]
+        }
+    ]
+}

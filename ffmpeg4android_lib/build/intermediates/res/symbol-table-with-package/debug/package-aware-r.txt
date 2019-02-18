@@ -1,0 +1,15 @@
+com.netcompss.ffmpeg4android
+id action_about
+menu main
+string app_name
+string commandText
+string commandTextView
+string email
+string full_app_name
+string welcome_1
+string welcome_2
+string welcome_3
+string welcome_demo
+style h1
+style h2
+style t1

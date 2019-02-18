@@ -20,5 +20,8 @@
     <dimen name="video_view_time_line_bottom_layout_height">60dp</dimen>
 
     <dimen name="carousel_flir_icon_size">100dp</dimen>
+    <dimen name="btn_record_height">70dp</dimen>
+    <dimen name="btn_record_width">70dp</dimen>
+    <dimen name="btn_record_margin_top">30dp</dimen>
 
 </resources>

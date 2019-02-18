@@ -39,4 +39,16 @@ public class StreamingInterceptor {
                 .observeOn(observeOnScheduler);
     }
 
+    public Observable<GetUrlResponse> getUploadAudioUrl(String serial, String stream, String contentType) {
+        return serviceApi.getUploadAudioUrl(authenticationProvider.getAccountToken(), serial, stream, contentType)
+                .subscribeOn(subscribeOnScheduler)
+                .observeOn(observeOnScheduler);
+    }
+
+    public Observable<GetUrlResponse> getDownloadAudioUrl(String serial, String stream, String contentType) {
+        return serviceApi.getDownloadAudioUrl(authenticationProvider.getAccountToken(), serial, stream, contentType)
+                .subscribeOn(subscribeOnScheduler)
+                .observeOn(observeOnScheduler);
+    }
+
 }

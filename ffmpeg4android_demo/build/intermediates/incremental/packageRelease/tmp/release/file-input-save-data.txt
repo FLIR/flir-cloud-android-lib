@@ -1,0 +1,23 @@
+#Internal package file, do not edit.
+#Sun Feb 17 15:22:54 IST 2019
+2.base=C\:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\build\\intermediates\\dex\\release\\mergeDexRelease\\out
+0.path=lib/armeabi-v7a/libloader-jni.so
+2.baseType=DIRECTORY
+3.base=C\:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\build\\intermediates\\merged_assets\\release\\out
+2.set=DEX
+1.path=lib/armeabi-v7a/liblicense-jni.so
+4.base=C\:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\build\\intermediates\\transforms\\stripDebugSymbol\\release\\0
+count=5
+2.path=classes.dex
+4.set=NATIVE_RESOURCE
+3.path=in.mp4
+3.baseType=DIRECTORY
+1.set=NATIVE_RESOURCE
+4.path=lib/armeabi-v7a/libvideokit.so
+1.baseType=DIRECTORY
+0.base=C\:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\build\\intermediates\\transforms\\stripDebugSymbol\\release\\0
+0.baseType=DIRECTORY
+3.set=ASSET
+1.base=C\:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\build\\intermediates\\transforms\\stripDebugSymbol\\release\\0
+4.baseType=DIRECTORY
+0.set=NATIVE_RESOURCE

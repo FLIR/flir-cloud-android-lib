@@ -3,6 +3,7 @@ package com.flir.cloud.ui.Access.AccessActivities.AccessCarouselFiles.AccessCame
 
 import com.flir.sdk.models.Device.GetDeviceStateResponse;
 
+import java.net.URISyntaxException;
 import java.util.List;
 
 /**
@@ -21,7 +22,10 @@ public interface ICameraActivityItemView {
 
     void responseFromServer(List<GetDeviceStateResponse> response, boolean isShowDialogWithDetails);
 
-
     void sendEvent(String aCategory, String aAction, String aEvent, String aComment);
+
+    void onUploadAudioUrlSuccess(String url) throws URISyntaxException;
+
+    void onUploadAudioUrlFailure();
 
 }

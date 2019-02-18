@@ -1,0 +1,4 @@
+#Sun Feb 17 15:22:48 IST 2019
+base.0=C\:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+path.0=classes.dex
+renamed.0=classes.dex

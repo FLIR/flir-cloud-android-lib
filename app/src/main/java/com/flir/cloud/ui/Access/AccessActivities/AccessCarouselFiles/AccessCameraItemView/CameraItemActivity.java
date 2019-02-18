@@ -1,5 +1,7 @@
 package com.flir.cloud.ui.Access.AccessActivities.AccessCarouselFiles.AccessCameraItemView;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
@@ -10,6 +12,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -21,11 +24,13 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.flir.cloud.EventManager.LambdaAnalyticsEventManager;
+import com.flir.cloud.LambdaConstant;
 import com.flir.cloud.MainApplication;
 import com.flir.cloud.R;
 import com.flir.cloud.SharedPreferences.LambdaSharedPreferenceManager;
 import com.flir.cloud.Utils.LambdaUtils;
 import com.flir.cloud.ui.Access.AccessActivities.AccessCarouselFiles.AccessCameraItemView.CameraVideoView.CameraVideoFrameLayoutCustomView;
+import com.flir.cloud.ui.Access.AccessActivities.AccessCarouselFiles.AccessCameraItemView.WebSokcetOkHttp3.EchoWebSocketListener;
 import com.flir.cloud.ui.Access.AccessActivities.AccessCarouselFiles.CarouselEffectFiles.CarouselItemFragment;
 import com.flir.cloud.ui.Access.AccessActivities.AccessCarouselFiles.CarouselEffectFiles.CarouselSettingsDialogFiles.CarouselSettingsDialogView;
 import com.flir.cloud.ui.Access.AccessActivities.AccessCarouselFiles.CarouselEffectFiles.CarouselShareDialogFiles.CarouselShareDialogView;
@@ -34,9 +39,9 @@ import com.flir.cloud.ui.Views.TimeLineCustomView.IUpdateTimeSelector;
 import com.flir.cloud.ui.Views.TimeLineCustomView.SelectorCustomView.TLView;
 import com.flir.cloud.ui.Access.AccessActivities.AccessCarouselFiles.AccessCameraItemView.CameraTopVideoView.TimeLineSelectorLinearLayout;
 import com.flir.sdk.Interceptors.DeviceInterceptor;
+import com.flir.sdk.Interceptors.StreamingInterceptor;
 import com.flir.sdk.models.Device.GetDeviceStateResponse;
 import com.flir.sdk.network.AuthenticationProvider;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -46,6 +51,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import pub.devrel.easypermissions.EasyPermissions;
 
 
 public class CameraItemActivity extends AppCompatActivity implements IUpdateTimeSelector, ICameraActivityItemView ,IVideoViewAction{
@@ -53,8 +59,15 @@ public class CameraItemActivity extends AppCompatActivity implements IUpdateTime
 
     public static final double MIN_VIDEO_PLAYBACK_SPEED = 0;
     public static final double MAX_VIDEO_PLAYBACK_SPEED = 2.5;
+    public static final int RC_RECORD_AUDIO = 1000;
+
+    private AudioRecorder mAudioRecorder;
+
     @Inject
     DeviceInterceptor DeviceInterceptor;
+
+    @Inject
+    StreamingInterceptor mStreamingInterceptor;
 
     @Inject
     AuthenticationProvider authenticationProvider;
@@ -178,6 +191,9 @@ public class CameraItemActivity extends AppCompatActivity implements IUpdateTime
         doChannelSelector();
     }
 
+    @BindView(R.id.record_audio_btn)
+    public ImageButton mStartRecording;
+
     @OnClick(R.id.tv_top_show_device_state)
     public void doCShowDeviceStateClicked() {
         doDeviceState();
@@ -199,10 +215,10 @@ public class CameraItemActivity extends AppCompatActivity implements IUpdateTime
     private String accountID;
     private String thumbnailUrl;
     public static boolean isStartPlayingVideo = false;
+    private ffmpegConverterToFmp4 mFfmpegConverterToFmp4;
 
     private LambdaAnalyticsEventManager mLambdaAnalyticsEventManager;
     private LambdaSharedPreferenceManager mLambdaSharedPreferenceManager;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -212,7 +228,10 @@ public class CameraItemActivity extends AppCompatActivity implements IUpdateTime
         ButterKnife.bind(this);
         ((MainApplication) getApplication()).getApplicationComponent().inject(this);
         mLambdaAnalyticsEventManager = new LambdaAnalyticsEventManager(this);
-        presenter = new CameraActivityItemPresenter(DeviceInterceptor, this);
+        presenter = new CameraActivityItemPresenter(DeviceInterceptor, mStreamingInterceptor, this);
+        mFfmpegConverterToFmp4 = new ffmpegConverterToFmp4(this);
+
+        ffmpegConverterToFmp4.isFinished = false;
         mLambdaSharedPreferenceManager = LambdaSharedPreferenceManager.getInstance();
         initCarouselItemDetails();
         mChannelSelectedName = mLambdaSharedPreferenceManager.getLambdaPrefsValue(LambdaSharedPreferenceManager.SHARED_PREFERENCE_SELECTED_CHANNEL + serial, "");
@@ -224,6 +243,74 @@ public class CameraItemActivity extends AppCompatActivity implements IUpdateTime
         videoControlsMode = false;
 
         presenter.getDeviceState(serial, false);
+
+        mStartRecording.setEnabled(false);
+        presenter.getUploadAudioUrl(serial, LambdaConstant.GRT_CAMERA_VIDEO_URL_MP4_STREAM_FORMAT, mChannelSelectedName);
+        initRecordButton();
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private void initRecordButton() {
+        mStartRecording.setOnTouchListener((view, motionEvent) -> {
+            if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                doActionDownMotionEvent();
+                return true;
+            }
+            if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                doActionUpMotionEvent();
+                return true;
+            } else {
+                return false;
+            }
+        });
+    }
+
+    String[] perms = {Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE};
+
+    private void doActionUpMotionEvent() {
+        if (EasyPermissions.hasPermissions(this, perms)) {
+
+            mStartRecording.setPressed(false);
+            stopRecording();
+            mFfmpegConverterToFmp4.startConvert();
+
+        } else {
+            EasyPermissions.requestPermissions(this, "Hi", RC_RECORD_AUDIO, perms);
+        }
+    }
+
+    private void doActionDownMotionEvent() {
+        if (EasyPermissions.hasPermissions(this, perms)) {
+            // Construct draggable shadow for view
+        mStartRecording.setPressed(true);
+        startRecording();
+        } else {
+            EasyPermissions.requestPermissions(this, "Hi", RC_RECORD_AUDIO, perms);
+        }
+    }
+
+    private void startRecording() {
+        mAudioRecorder.startRecording();
+    }
+
+    private void stopRecording() {
+        mAudioRecorder.stopRecording();
+    }
+
+    @Override
+    public void onUploadAudioUrlSuccess(String url){
+        LambdaSharedPreferenceManager.getInstance().setLambdaPrefsValue(LambdaSharedPreferenceManager.SHARED_PREFERENCE_UPLOAD_URL, url);
+
+        mAudioRecorder = new AudioRecorder(this);
+        mStartRecording.setEnabled(true);
+
+        new EchoWebSocketListener(url);
+
+    }
+
+    @Override
+    public void onUploadAudioUrlFailure() {
+
     }
 
 
@@ -677,6 +764,7 @@ public class CameraItemActivity extends AppCompatActivity implements IUpdateTime
                 mLinearLayoutTopView.doExportVideo();
             }
         }
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
 
 }

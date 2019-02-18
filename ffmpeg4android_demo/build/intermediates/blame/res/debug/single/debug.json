@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\build\\intermediates\\res\\merged\\debug\\layout_ffmpeg_demo_client_1.xml.flat",
+        "source": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\src\\main\\res\\layout\\ffmpeg_demo_client_1.xml"
+    },
+    {
+        "merged": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\build\\intermediates\\res\\merged\\debug\\layout_ffmpeg_demo_client.xml.flat",
+        "source": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\src\\main\\res\\layout\\ffmpeg_demo_client.xml"
+    },
+    {
+        "merged": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_notif.png.flat",
+        "source": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\src\\main\\res\\drawable-xxhdpi\\ic_notif.png"
+    },
+    {
+        "merged": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\build\\intermediates\\res\\merged\\debug\\layout_main.xml.flat",
+        "source": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\src\\main\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\build\\intermediates\\res\\merged\\debug\\layout_ffmpeg_demo_client_4.xml.flat",
+        "source": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\src\\main\\res\\layout\\ffmpeg_demo_client_4.xml"
+    },
+    {
+        "merged": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\build\\intermediates\\res\\merged\\debug\\layout_ffmpeg_demo_client_3.xml.flat",
+        "source": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\src\\main\\res\\layout\\ffmpeg_demo_client_3.xml"
+    },
+    {
+        "merged": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\build\\intermediates\\res\\merged\\debug\\drawable_icon.png.flat",
+        "source": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\src\\main\\res\\drawable\\icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\build\\intermediates\\res\\merged\\debug\\menu_main.xml.flat",
+        "source": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\build\\intermediates\\res\\merged\\debug\\layout_ffmpeg_demo_client_2.xml.flat",
+        "source": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\src\\main\\res\\layout\\ffmpeg_demo_client_2.xml"
+    }
+]

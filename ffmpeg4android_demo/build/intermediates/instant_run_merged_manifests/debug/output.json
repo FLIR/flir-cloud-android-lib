@@ -1,0 +1,1 @@
+[{"outputType":{"type":"INSTANT_RUN_MERGED_MANIFESTS"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":3220303,"versionName":"3.22.03.03","enabled":true,"outputFile":"ffmpeg4android_demo-debug.apk","fullName":"debug","baseName":"debug"},"path":"AndroidManifest.xml","properties":{"packageId":"com.examples.ffmpeg4android_demo","split":"","minSdkVersion":"19"}}]

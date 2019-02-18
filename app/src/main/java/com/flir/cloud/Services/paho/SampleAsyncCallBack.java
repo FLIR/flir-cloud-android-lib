@@ -338,7 +338,7 @@ public class SampleAsyncCallBack implements MqttCallback {
                     try {
                         System.in.read();
                     } catch (IOException e) {
-                        //If we can't read we'll just exit
+                        //If we can't convertFileToByteArray we'll just exit
                     }
                     state = DISCONNECT;
                     donext = true;

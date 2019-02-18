@@ -1,10 +1,15 @@
 package com.flir.cloud.ui.Access.AccessActivities.AccessCarouselFiles.AccessCameraItemView;
 
+import android.util.Log;
+
 import com.flir.cloud.DialogManagerFiles.IPresenter;
 import com.flir.cloud.EventManager.LambdaAnalyticsEventManager;
 import com.flir.sdk.Interceptors.DeviceInterceptor;
+import com.flir.sdk.Interceptors.StreamingInterceptor;
 import com.flir.sdk.models.Device.GetDeviceStateResponse;
+import com.flir.sdk.models.Events.GetUrlResponse;
 
+import java.net.URISyntaxException;
 import java.util.List;
 
 import io.reactivex.Observable;
@@ -24,11 +29,13 @@ public class CameraActivityItemPresenter implements IPresenter {
     private final ICameraActivityItemView view;
     private CompositeDisposable subscriptions;
     private DeviceInterceptor interceptor;
+    private StreamingInterceptor mStreamingInterceptor;
 
 
-    public CameraActivityItemPresenter(DeviceInterceptor interceptor, ICameraActivityItemView view) {
+    public CameraActivityItemPresenter(DeviceInterceptor interceptor, StreamingInterceptor aStreamingInterceptor, ICameraActivityItemView view) {
         this.view = view;
         this.interceptor = interceptor;
+        this.mStreamingInterceptor = aStreamingInterceptor;
         subscriptions = new CompositeDisposable();
     }
 
@@ -88,6 +95,32 @@ public class CameraActivityItemPresenter implements IPresenter {
         }));
 
         view.showWait();
+    }
+
+    public void getUploadAudioUrl(String serial, String stream, String contentType) {
+        Observable<GetUrlResponse> observable= mStreamingInterceptor.getUploadAudioUrl(serial,stream, contentType);
+        subscriptions.add(observable.subscribeWith(new DisposableObserver<GetUrlResponse>() {
+            @Override
+            public void onComplete() {
+
+            }
+
+            @Override
+            public void onNext(GetUrlResponse aGetUrlResponse) {
+                try {
+                    view.onUploadAudioUrlSuccess(aGetUrlResponse.url);
+                } catch (URISyntaxException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                view.onUploadAudioUrlFailure();
+            }
+
+        }));
+
     }
 
 }

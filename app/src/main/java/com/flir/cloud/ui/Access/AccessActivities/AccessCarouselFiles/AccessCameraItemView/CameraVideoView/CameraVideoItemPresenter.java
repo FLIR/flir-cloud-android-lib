@@ -1,5 +1,7 @@
 package com.flir.cloud.ui.Access.AccessActivities.AccessCarouselFiles.AccessCameraItemView.CameraVideoView;
 
+import android.util.Log;
+
 import com.flir.cloud.DialogManagerFiles.IPresenter;
 import com.flir.sdk.Interceptors.StreamingInterceptor;
 import com.flir.sdk.models.Events.GetUrlResponse;

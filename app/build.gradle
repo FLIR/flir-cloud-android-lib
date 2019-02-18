@@ -22,7 +22,7 @@ android {
     buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "com.flir.cloud"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -33,6 +33,10 @@ android {
         buildConfigField "int", "CACHETIME", "432000" // 5days
 
         multiDexEnabled true
+
+        ndk {
+            abiFilter "armeabi-v7a"
+        }
     }
     buildTypes {
         /*release {
@@ -117,5 +121,8 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:2.15.0'
     testImplementation 'com.squareup.okhttp3:mockwebserver:3.10.0'
     implementation project(path: ':flircloudlib')
+
+    implementation 'pub.devrel:easypermissions:0.2.1'
+    implementation project(':ffmpeg4android_lib')
 
 }

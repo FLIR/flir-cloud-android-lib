@@ -44,6 +44,8 @@ public class LambdaSharedPreferenceManager {
 
     public static final String SHARED_PREFERENCE_REPORTED_VALUE = "reportedValue";
     public static final String SHARED_PREFERENCE_DESIRED_VALUE = "desiredValue";
+
+    public static final String SHARED_PREFERENCE_UPLOAD_URL = "videoUploadUrl";
     //================================================
 
     private SharedPreferences lambdaSharedPreferences;

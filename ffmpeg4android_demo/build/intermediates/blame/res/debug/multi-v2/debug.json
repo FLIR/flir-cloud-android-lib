@@ -1,0 +1,47 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "3,16,14,15,4,5,7,9,10,13,6",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "52,1171,963,1101,90,142,324,508,639,884,200",
+                        "endLines": "3,16,14,15,4,5,8,9,12,13,6",
+                        "endColumns": "37,198,137,69,51,57,101,130,88,78,123",
+                        "endOffsets": "89,1369,1100,1170,141,199,507,638,883,962,323"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,10,11,14,15",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,97,300,442,516,572,634,822,957,1206,1289",
+                        "endLines": "2,3,4,5,6,7,9,10,13,14,15",
+                        "endColumns": "41,202,141,73,55,61,101,134,88,82,127",
+                        "endOffsets": "92,295,437,511,567,629,817,952,1201,1284,1412"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Moti\\Documents\\LambdaLibProject\\ffmpeg4android_demo\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "6,12,2",
+                        "startColumns": "0,0,0",
+                        "startOffsets": "201,404,53",
+                        "endLines": "10,16,5",
+                        "endColumns": "8,8,8",
+                        "endOffsets": "400,603,199"
+                    },
+                    "to": {
+                        "startLines": "16,21,26",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "1417,1617,1817",
+                        "endLines": "20,25,29",
+                        "endColumns": "8,8,8",
+                        "endOffsets": "1612,1812,1960"
+                    }
+                }
+            ]
+        }
+    ]
+}

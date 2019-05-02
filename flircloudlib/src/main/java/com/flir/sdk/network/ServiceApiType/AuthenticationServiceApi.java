@@ -14,6 +14,8 @@ import com.flir.sdk.models.authenticationModel.RefreshTokenResponse;
 import com.flir.sdk.models.authenticationModel.SignUp;
 import com.flir.sdk.models.authenticationModel.SignUpResponse;
 import com.flir.sdk.models.userModel.PasswordPolicy;
+import com.flir.sdk.models.userModel.TokenExchange;
+import com.flir.sdk.models.userModel.TokenExchangeResponse;
 import com.flir.sdk.models.userModel.UpdateUserResponse;
 import com.flir.sdk.models.userModel.UserPicture;
 
@@ -69,7 +71,7 @@ public interface AuthenticationServiceApi {
     Observable<UpdateUserResponse> updateUser(@Header("Content-Type") String content_type,
                                               @Body SignUp signUp);
 
-    @PUT("/api/authentication/password-policy")
+    @GET("/api/authentication/password-policy")
     Observable<PasswordPolicy> GetPasswordPolicy();
 
     @PUT("/api/authentication/user/password")
@@ -84,6 +86,9 @@ public interface AuthenticationServiceApi {
 
     @GET("/api/authentication/user/picture")
     Observable<UserPicture> getUserPicture(@Header("Content-Type") String content_type);
+
+    @POST("/api/authentication/oauth2/token")
+    Observable<TokenExchangeResponse> TokenExchange(@Header("Content-Type") String content_type, TokenExchange aTokenExchange);
 
 
 }

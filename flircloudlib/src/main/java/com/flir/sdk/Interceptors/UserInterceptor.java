@@ -4,6 +4,8 @@ import com.flir.sdk.models.userModel.ChangePassword;
 import com.flir.sdk.models.userModel.ForgetPassword;
 import com.flir.sdk.models.authenticationModel.SignUp;
 import com.flir.sdk.models.userModel.PasswordPolicy;
+import com.flir.sdk.models.userModel.TokenExchange;
+import com.flir.sdk.models.userModel.TokenExchangeResponse;
 import com.flir.sdk.models.userModel.UpdateUserResponse;
 import com.flir.sdk.models.userModel.UserPicture;
 import com.flir.sdk.network.AuthenticationProvider;
@@ -78,5 +80,12 @@ public class UserInterceptor {
                 .subscribeOn(subscribeOnScheduler)
                 .observeOn(observeOnScheduler)
                 .onErrorResumeNext((Function<Throwable, ObservableSource<? extends UserPicture>>) Observable::error);
+    }
+
+    public Observable tokenExchange(TokenExchange aTokenExchange) {
+        return serviceApi.TokenExchange(CONTENT_TYPE, aTokenExchange)
+                .subscribeOn(subscribeOnScheduler)
+                .observeOn(observeOnScheduler)
+                .onErrorResumeNext((Function<Throwable, ObservableSource<? extends TokenExchangeResponse>>) Observable::error);
     }
 }

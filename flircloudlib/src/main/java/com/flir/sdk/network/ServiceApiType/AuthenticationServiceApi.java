@@ -38,7 +38,7 @@ public interface AuthenticationServiceApi {
     Observable<SignUpResponse> signUpToServer(@Header("Content-Type") String content_type, @Body SignUp signUp);
 
     @POST("/api/authentication/resend")
-    Observable<ResponseBody> ResendVerification(@Header("Content-Type") String content_type, @Body ResendVerificationRequest signUp);
+    Completable ResendVerification(@Header("Content-Type") String content_type, @Body ResendVerificationRequest signUp);
 
     //Authentication API
     @POST("/api/authentication/login")

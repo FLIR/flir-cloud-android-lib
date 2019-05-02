@@ -10,6 +10,7 @@ import com.flir.sdk.models.authenticationModel.SignUpResponse;
 import com.flir.sdk.network.ServiceApiType.AuthenticationServiceApi;
 import com.flir.sdk.network.ServiceGenerator;
 
+import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.Scheduler;
@@ -41,12 +42,10 @@ public class LoginInterceptor {
         return signUpToServer;
     }
 
-    public Observable ResendVerification(ResendVerificationRequest aResendVerificationRequest) {
-        Observable<ResponseBody> signUpToServer = serviceApi.ResendVerification(CONTENT_TYPE, aResendVerificationRequest)
+    public Completable ResendVerification(ResendVerificationRequest aResendVerificationRequest) {
+        return serviceApi.ResendVerification(CONTENT_TYPE, aResendVerificationRequest)
                 .subscribeOn(subscribeOnScheduler)
-                .observeOn(observeOnScheduler)
-                .onErrorResumeNext((Function<Throwable, ObservableSource<? extends ResponseBody>>) Observable::error);
-        return signUpToServer;
+                .observeOn(observeOnScheduler);
     }
 
     public Observable<LoginResponse> postLoginRequest(Login login) {

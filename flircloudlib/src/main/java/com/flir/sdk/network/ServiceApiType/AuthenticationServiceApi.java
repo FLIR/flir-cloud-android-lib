@@ -13,6 +13,7 @@ import com.flir.sdk.models.authenticationModel.RefreshToken;
 import com.flir.sdk.models.authenticationModel.RefreshTokenResponse;
 import com.flir.sdk.models.authenticationModel.SignUp;
 import com.flir.sdk.models.authenticationModel.SignUpResponse;
+import com.flir.sdk.models.userModel.PasswordPolicy;
 import com.flir.sdk.models.userModel.UpdateUserResponse;
 import com.flir.sdk.models.userModel.UserPicture;
 
@@ -67,6 +68,9 @@ public interface AuthenticationServiceApi {
     @PUT("/api/authentication/user")
     Observable<UpdateUserResponse> updateUser(@Header("Content-Type") String content_type,
                                               @Body SignUp signUp);
+
+    @PUT("/api/authentication/password-policy")
+    Observable<PasswordPolicy> GetPasswordPolicy();
 
     @PUT("/api/authentication/user/password")
     Completable changePassword(@Header("Content-Type") String content_type,

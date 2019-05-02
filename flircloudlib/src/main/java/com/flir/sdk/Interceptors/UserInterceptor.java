@@ -3,6 +3,7 @@ package com.flir.sdk.Interceptors;
 import com.flir.sdk.models.userModel.ChangePassword;
 import com.flir.sdk.models.userModel.ForgetPassword;
 import com.flir.sdk.models.authenticationModel.SignUp;
+import com.flir.sdk.models.userModel.PasswordPolicy;
 import com.flir.sdk.models.userModel.UpdateUserResponse;
 import com.flir.sdk.models.userModel.UserPicture;
 import com.flir.sdk.network.AuthenticationProvider;
@@ -44,6 +45,13 @@ public class UserInterceptor {
                 .subscribeOn(subscribeOnScheduler)
                 .observeOn(observeOnScheduler)
                 .onErrorResumeNext((Function<Throwable, ObservableSource<? extends UpdateUserResponse>>) Observable::error);
+    }
+
+    public Observable GetPasswordPolicy() {
+        return serviceApi.GetPasswordPolicy()
+                .subscribeOn(subscribeOnScheduler)
+                .observeOn(observeOnScheduler)
+                .onErrorResumeNext((Function<Throwable, ObservableSource<? extends PasswordPolicy>>) Observable::error);
     }
 
     public Completable putChangePassword(ChangePassword changePassword) {

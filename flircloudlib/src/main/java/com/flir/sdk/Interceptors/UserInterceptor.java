@@ -25,6 +25,7 @@ public class UserInterceptor {
     private Scheduler subscribeOnScheduler;
     private Scheduler observeOnScheduler;
     private final String CONTENT_TYPE = "application/json";
+    private final String CONTENT_TYPE_FOR_OCTET_STREAM = "application/octet-stream";
 
     public UserInterceptor(ServiceGenerator serviceGenerator, Scheduler subscribeOnScheduler, Scheduler observeOnScheduler, AuthenticationProvider authenticationProvider) {
         serviceApi = (AuthenticationServiceApi) serviceGenerator.createService(AuthenticationServiceApi.class, authenticationProvider);
@@ -59,7 +60,7 @@ public class UserInterceptor {
     }
 
     public Completable postUploadUserProfilePicture(RequestBody requestBody) {
-        return serviceApi.uploadUserProfilePicture("application/octet-stream",requestBody)
+        return serviceApi.uploadUserProfilePicture(CONTENT_TYPE_FOR_OCTET_STREAM,requestBody)
                 .subscribeOn(subscribeOnScheduler)
                 .observeOn(observeOnScheduler);
     }

@@ -3,6 +3,7 @@ package com.flir.sdk.network.ServiceApiType;
 import com.flir.sdk.models.accounts.Account;
 import com.flir.sdk.models.accounts.CreateAccount;
 import com.flir.sdk.models.accounts.CreateAccountResponse;
+import com.flir.sdk.models.authenticationModel.ResendVerificationRequest;
 import com.flir.sdk.models.userModel.ChangePassword;
 import com.flir.sdk.models.userModel.ForgetPassword;
 import com.flir.sdk.models.authenticationModel.Login;
@@ -18,6 +19,7 @@ import com.flir.sdk.models.userModel.UserPicture;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -34,6 +36,9 @@ public interface AuthenticationServiceApi {
     //Registration API
     @POST("/api/authentication/signup")
     Observable<SignUpResponse> signUpToServer(@Header("Content-Type") String content_type, @Body SignUp signUp);
+
+    @POST("/api/authentication/resend")
+    Observable<ResponseBody> ResendVerification(@Header("Content-Type") String content_type, @Body ResendVerificationRequest signUp);
 
     //Authentication API
     @POST("/api/authentication/login")

@@ -4,6 +4,7 @@ import com.flir.sdk.models.authenticationModel.Login;
 import com.flir.sdk.models.authenticationModel.LoginResponse;
 import com.flir.sdk.models.authenticationModel.RefreshToken;
 import com.flir.sdk.models.authenticationModel.RefreshTokenResponse;
+import com.flir.sdk.models.authenticationModel.ResendVerificationRequest;
 import com.flir.sdk.models.authenticationModel.SignUp;
 import com.flir.sdk.models.authenticationModel.SignUpResponse;
 import com.flir.sdk.network.ServiceApiType.AuthenticationServiceApi;
@@ -13,6 +14,7 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.Scheduler;
 import io.reactivex.functions.Function;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 
 /**
@@ -36,6 +38,14 @@ public class LoginInterceptor {
                 .subscribeOn(subscribeOnScheduler)
                 .observeOn(observeOnScheduler)
                 .onErrorResumeNext((Function<Throwable, ObservableSource<? extends SignUpResponse>>) Observable::error);
+        return signUpToServer;
+    }
+
+    public Observable ResendVerification(ResendVerificationRequest aResendVerificationRequest) {
+        Observable<ResponseBody> signUpToServer = serviceApi.ResendVerification(CONTENT_TYPE, aResendVerificationRequest)
+                .subscribeOn(subscribeOnScheduler)
+                .observeOn(observeOnScheduler)
+                .onErrorResumeNext((Function<Throwable, ObservableSource<? extends ResponseBody>>) Observable::error);
         return signUpToServer;
     }
 

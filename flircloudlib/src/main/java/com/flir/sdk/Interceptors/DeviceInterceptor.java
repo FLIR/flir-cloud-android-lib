@@ -3,11 +3,13 @@ package com.flir.sdk.Interceptors;
 
 import com.flir.sdk.Utils.Constants;
 import com.flir.sdk.models.Device.AddDevice;
+import com.flir.sdk.models.Device.AddVirtualDevice;
 import com.flir.sdk.models.Device.DeleteAttributes;
 import com.flir.sdk.models.Device.DeviceDetails;
 import com.flir.sdk.models.Device.DeviceSecret;
 import com.flir.sdk.models.Device.GetDeviceSelfResponse;
 import com.flir.sdk.models.Device.GetDeviceStateResponse;
+import com.flir.sdk.models.Device.GetPendingDevicesResponse;
 import com.flir.sdk.models.Device.UpdateDevice;
 import com.flir.sdk.models.Device.UpdateReported;
 import com.flir.sdk.models.Device.UpdateState;
@@ -85,6 +87,12 @@ public class DeviceInterceptor {
                 .observeOn(observeOnScheduler);
     }
 
+    public Observable<GetDeviceSelfResponse> addVirtualDevice(String deviceLogicalID, AddVirtualDevice addVirtualDevice) {
+        return serviceApi.addVirtualDevice(Constants.CONTENT_TYPE, deviceLogicalID, addVirtualDevice)
+                .subscribeOn(subscribeOnScheduler)
+                .observeOn(observeOnScheduler);
+    }
+
     public Observable<ResponseBody> commitPendingDevice(DeviceSecret aDeviceSecret) {
         return serviceApi.commitPendingDevice(Constants.CONTENT_TYPE, aDeviceSecret)
                 .subscribeOn(subscribeOnScheduler)
@@ -111,6 +119,13 @@ public class DeviceInterceptor {
 
     public Observable<List<DeviceDetails>> getDevices() {
         return serviceApi.getDevices(authenticationProvider.getAccountToken())
+                .subscribeOn(subscribeOnScheduler)
+                .observeOn(observeOnScheduler);
+    }
+
+
+    public Observable<List<GetPendingDevicesResponse>> getPendingDevices() {
+        return serviceApi.getPendingDevices(Constants.CONTENT_TYPE, authenticationProvider.getAccountToken())
                 .subscribeOn(subscribeOnScheduler)
                 .observeOn(observeOnScheduler);
     }

@@ -2,11 +2,13 @@ package com.flir.sdk.network.ServiceApiType;
 
 import com.flir.sdk.Utils.Constants;
 import com.flir.sdk.models.Device.AddDevice;
+import com.flir.sdk.models.Device.AddVirtualDevice;
 import com.flir.sdk.models.Device.DeleteAttributes;
 import com.flir.sdk.models.Device.DeviceDetails;
 import com.flir.sdk.models.Device.DeviceSecret;
 import com.flir.sdk.models.Device.GetDeviceSelfResponse;
 import com.flir.sdk.models.Device.GetDeviceStateResponse;
+import com.flir.sdk.models.Device.GetPendingDevicesResponse;
 import com.flir.sdk.models.Device.UpdateDevice;
 import com.flir.sdk.models.Device.UpdateReported;
 import com.flir.sdk.models.Device.UpdateState;
@@ -47,11 +49,17 @@ public interface DeviceServiceApi {
     @POST("/api/device/devices")
     Observable<DeviceSecret> addPendingDevice(@Header(Constants.CONTENT_TYPE_KEY) String content_type, @Header(Constants.X_ACCOUNT_ID_KEY) String x_account_id, @Body AddDevice addDevice);
 
+    @POST("/api/device/devices/{deviceLogicalID}/virtuals")
+    Observable<GetDeviceSelfResponse> addVirtualDevice(@Header(Constants.CONTENT_TYPE_KEY) String content_type, @Path(value = "deviceLogicalID", encoded = true) String deviceLogicalID , @Body AddVirtualDevice addVirtualDevice );
+
     @DELETE("/api/device/devices/{deviceID}")
     Observable<ResponseBody> deleteDevice(@Header(Constants.X_ACCOUNT_ID_KEY) String x_account_id, @Path(value = "deviceID") String deviceId);
 
     @GET("/api/device/devices")
     Observable<List<DeviceDetails>> getDevices(@Header(Constants.X_ACCOUNT_ID_KEY) String x_account_id);
+
+    @GET("/api/device/devices/pending")
+    Observable<List<GetPendingDevicesResponse>>  getPendingDevices(@Header(Constants.CONTENT_TYPE_KEY) String content_type, @Header(Constants.X_ACCOUNT_ID_KEY) String x_account_id);
 
     @GET("/api/device/devices/{serial}/information")
     Observable<DeviceDetails> getDevicesBySerial(@Header(Constants.X_ACCOUNT_ID_KEY) String x_account_id, @Path(value = "serial", encoded = true) String serial);

@@ -55,6 +55,10 @@ public interface DeviceServiceApi {
     @DELETE("/api/device/devices/{deviceID}")
     Observable<ResponseBody> deleteDevice(@Header(Constants.X_ACCOUNT_ID_KEY) String x_account_id, @Path(value = "deviceID") String deviceId);
 
+
+    @DELETE("/api/device/devices/{deviceLogicalID}/virtuals/{virtualDeviceID}")
+    Observable<ResponseBody> deleteVirtualDevice(@Header(Constants.X_ACCOUNT_ID_KEY) String x_account_id, @Path(value = "virtualDeviceID") String deviceVirtualId, @Path(value = "deviceLogicalID", encoded = true) String deviceLogicalID);
+
     @GET("/api/device/devices")
     Observable<List<DeviceDetails>> getDevices(@Header(Constants.X_ACCOUNT_ID_KEY) String x_account_id);
 

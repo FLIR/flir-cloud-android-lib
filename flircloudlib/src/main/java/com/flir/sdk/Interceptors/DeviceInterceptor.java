@@ -93,6 +93,12 @@ public class DeviceInterceptor {
                 .observeOn(observeOnScheduler);
     }
 
+    public Observable<ResponseBody> deleteVirtualDevice( String aVirtualDeviceID,String deviceLogicalID) {
+        return serviceApi.deleteVirtualDevice( authenticationProvider.getAccountToken(), aVirtualDeviceID, deviceLogicalID)
+                .subscribeOn(subscribeOnScheduler)
+                .observeOn(observeOnScheduler);
+    }
+
     public Observable<ResponseBody> commitPendingDevice(DeviceSecret aDeviceSecret) {
         return serviceApi.commitPendingDevice(Constants.CONTENT_TYPE, aDeviceSecret)
                 .subscribeOn(subscribeOnScheduler)
